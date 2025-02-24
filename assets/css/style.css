@@ -2142,7 +2142,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 /* Make service icons consistent */
 .service-icon-box img {
-  filter: brightness(0) saturate(100%) invert(82%) sepia(14%) saturate(1071%) hue-rotate(84deg) brightness(92%) contrast(87%));
+  filter: brightness(0) saturate(100%) invert(82%) sepia(14%) saturate(1071%) hue-rotate(84deg) brightness(92%) contrast(87%);
   opacity: 0.8;
   transition: var(--transition-1);
 }
@@ -2210,7 +2210,7 @@ ion-icon,
 .service-icon-box img,
 .modal-avatar-box img,
 .testimonials-avatar-box img {
-  filter: brightness(0) saturate(100%) invert(82%) sepia(14%) saturate(1071%) hue-rotate(84deg) brightness(92%) contrast(87%));
+  filter: brightness(0) saturate(100%) invert(82%) sepia(14%) saturate(1071%) hue-rotate(84deg) brightness(92%) contrast(87%);
   opacity: 0.8;
   transition: var(--transition-1);
 }
@@ -2237,7 +2237,7 @@ ion-icon,
 .icon-stack img {
   width: 32px;
   height: 32px;
-  filter: brightness(0) saturate(100%) invert(82%) sepia(14%) saturate(1071%) hue-rotate(84deg) brightness(92%) contrast(87%));
+  filter: brightness(0) saturate(100%) invert(82%) sepia(14%) saturate(1071%) hue-rotate(84deg) brightness(92%) contrast(87%);
   opacity: 0.8;
   transition: transform 0.3s ease;
 }
