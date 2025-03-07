@@ -865,6 +865,10 @@ main {
   border-radius: inherit;
 }
 
+.languages {
+  margin-top: 20px; 
+}
+
 /*-----------------------------------*\
   #PORTFOLIO
 \*-----------------------------------*/
@@ -2079,5 +2083,65 @@ article[data-page="contact"].active ~ .main-content {
     margin-bottom: 0;
     padding-top: 60px;
     z-index: 1;
+  }
+}
+
+/* Update the Resume header styles */
+.resume header {
+  margin-bottom: 30px;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.download-btn {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  color: var(--accent-color);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 14px;
+  font-size: var(--fs-6);
+  text-transform: capitalize;
+  box-shadow: var(--shadow-1);
+  z-index: 1;
+  transition: var(--transition-1);
+  width: fit-content;
+}
+
+/* Rest of the download button styles remain the same */
+.download-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.download-btn ion-icon {
+  font-size: 18px;
+}
+
+.download-btn:hover {
+  background: var(--bg-gradient-sage-1);
+}
+
+.download-btn:hover::before {
+  background: var(--bg-gradient-sage-2);
+}
+
+/* Mobile adjustments are simpler now */
+@media (max-width: 580px) {
+  .download-btn {
+    font-size: var(--fs-7);
+    padding: 8px 15px;
   }
 }
