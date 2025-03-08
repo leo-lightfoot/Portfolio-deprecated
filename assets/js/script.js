@@ -76,12 +76,16 @@ const filterItems = document.querySelectorAll("[data-filter-item]");
 
 const filterFunc = function (selectedValue) {
   for (let i = 0; filterItems && i < filterItems.length; i++) {
-    if (selectedValue === "all") {
+    // Reset all items to inactive
+    filterItems[i].classList.remove("active");
+
+    // Show only the items that match the selected category
+    if (selectedValue === "projects" && filterItems[i].dataset.category === "projects") {
       filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
+    } else if (selectedValue === "learning" && filterItems[i].dataset.category === "learning") {
       filterItems[i].classList.add("active");
-    } else {
-      filterItems[i].classList.remove("active");
+    } else if (selectedValue === "competitions" && filterItems[i].dataset.category === "competitions") {
+      filterItems[i].classList.add("active");
     }
   }
 }
@@ -130,7 +134,7 @@ function updateSidebarVisibility() {
     const pageType = activePage.dataset.page;
     
     // Show sidebar only on about and resume pages
-    if (pageType === "about" || pageType === "resume") {
+    if (pageType === "about" ) {
       sidebar.style.display = "block";
     } else {
       sidebar.style.display = "none";
