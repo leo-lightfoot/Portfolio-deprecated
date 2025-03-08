@@ -181,12 +181,13 @@
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
+          <!--
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Portfolio</button>
           </li>
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
+          </li>-->
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
           </li>
@@ -352,7 +353,7 @@
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Home Chef</h4>
+                <h4 class="h4 service-item-title">Home Cook</h4>
 
                 <p class="service-item-text">
                   Experimenting with flavors, crafting dishes, and making every meal an experience.
@@ -391,7 +392,7 @@
 
         <header>
           <h2 class="h2 article-title">Resume</h2>
-          <a href="./assets/resume/Abdul_Malik_Resume.pdf" download class="download-btn">
+          <a href="./assets/resume/Abdul_Malik_Resume.pdf" target="_blank" download class="download-btn">
             <ion-icon name="download-outline"></ion-icon>
             <span>Download PDF</span>
           </a>
@@ -599,7 +600,7 @@
 
       <!--
         - #PORTFOLIO
-      -->
+ 
 
       <article class="portfolio" data-page="portfolio">
 
@@ -832,14 +833,14 @@
         </section>
 
       </article>
-
+     -->
 
 
 
 
       <!--
         - #BLOG
-      -->
+
 
       <article class="blog" data-page="blog">
 
@@ -1024,7 +1025,7 @@
         </section>
 
       </article>
-
+      -->
 
 
 
@@ -1041,35 +1042,24 @@
 
         <section class="mapbox" data-mapbox>
           <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-              width="400" height="300" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2557.5065971197455!2d8.67814487643946!3d50.132954110173486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd0ecc1ce6c2af%3A0x3e0778828d7e65f9!2sFrankfurt%20School%20of%20Finance%20%26%20Management!5e0!3m2!1sen!2sde!4v1741385755198!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </figure>
         </section>
 
         <section class="contact-form">
-
           <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
+          <form action="https://formspree.io/f/xanewpqd" method="POST">
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
               <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
             </div>
-
             <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
+            <button class="form-btn" type="submit">
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
             </button>
-
           </form>
-
         </section>
-
       </article>
 
     </div>
