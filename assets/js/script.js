@@ -127,17 +127,23 @@ const pages = document.querySelectorAll("[data-page]");
 
 // Function to control sidebar visibility based on active page
 function updateSidebarVisibility() {
-  const sidebar = document.querySelector("[data-sidebar]");
-  const activePage = document.querySelector("[data-page].active");
+  const aboutSidebar = document.querySelector("[about-sidebar]");
+  const resumeSidebar = document.querySelector("[resume-sidebar]");
+  const activePage = document.querySelector(".active[data-page]");
   
-  if (activePage && sidebar) {
+  if (activePage && aboutSidebar && resumeSidebar) {
     const pageType = activePage.dataset.page;
     
-    // Show sidebar only on about and resume pages
-    if (pageType === "about" ) {
-      sidebar.style.display = "block";
+    if (pageType === "about") {
+      aboutSidebar.style.display = "block"; // Show About sidebar
+      resumeSidebar.style.display = "none"; // Hide Resume sidebar
+    } else if (pageType === "resume") {
+      aboutSidebar.style.display = "none"; // Hide About sidebar
+      resumeSidebar.style.display = "block"; // Show Resume sidebar
     } else {
-      sidebar.style.display = "none";
+      // Hide both sidebars for other pages (portfolio, etc.)
+      aboutSidebar.style.display = "none";
+      resumeSidebar.style.display = "none";
     }
     
     console.log("Sidebar visibility updated for:", pageType);

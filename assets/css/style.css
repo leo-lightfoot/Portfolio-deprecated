@@ -196,7 +196,7 @@ article {
   background: var(--eerie-black-2);
   border: 1px solid var(--jet);
   border-radius: 20px;
-  padding: 15px;
+  padding: 10px;
   box-shadow: var(--shadow-1);
   z-index: 1;
 }
@@ -2081,7 +2081,7 @@ article[data-page="contact"].active ~ .main-content {
     max-height: max-content;
     height: 100%;
     margin-bottom: 0;
-    padding-top: 60px;
+    padding-top: 40px;
     z-index: 1;
   }
 }
@@ -2145,3 +2145,108 @@ article[data-page="contact"].active ~ .main-content {
     padding: 8px 15px;
   }
 }
+
+/* Tech Stack Styles */
+.tech-stack {
+  padding: 0 10px;
+}
+
+.tech-stack-title {
+  color: var(--white-1);
+  font-size: var(--fs-3);
+  margin-bottom: 10px;
+  margin-top: 5px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+/* Increase icon size */
+.tech-icon-box {
+  position: relative;
+  background: rgb(161, 160, 160); /* Set background to white */
+  width: 70px; /* Increased width */
+  height: 70px; /* Increased height */
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  color: var(--accent-color);
+  box-shadow: var(--shadow-1);
+  z-index: 1;
+  transition: 0.25s ease;
+}
+
+.tech-icon-box img {
+  width: 50px; /* Increased image size */
+  height: 50px; /* Increased image size */
+  transition: 0.25s ease;
+}
+
+/* Multi-column layout for smaller screens (when sidebar moves to top) */
+@media (max-width: 1249px) {
+  .tech-list {
+    flex-direction: row; /* Multi-column layout */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Single column layout for larger screens (when sidebar is on the side) */
+@media (min-width: 1250px) {
+  .tech-list {
+    flex-direction: column; /* Stack items in a single column */
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+}
+
+.tech-item {
+  position: relative;
+}
+
+.tech-icon-box::after {
+  content: attr(title);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--eerie-black-2);
+  color: var(--light-gray-70);
+  font-size: var(--fs-8);
+  padding: 3px 10px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease;
+}
+
+.tech-icon-box:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 580px) {
+  .tech-list {
+    gap: 10px;
+  }
+  
+  .tech-icon-box {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .tech-icon-box img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+
