@@ -2249,4 +2249,20 @@ article[data-page="contact"].active ~ .main-content {
   }
 }
 
+/* Default state - hide both sidebars */
+.sidebar[data-sidebar="about"],
+.sidebar[data-sidebar="resume"] {
+  display: none;
+}
+
+/* Show About sidebar only on About page */
+article[data-page="about"].active ~ .sidebar[data-sidebar="about"] {
+  display: block;
+}
+
+/* Show Resume sidebar only on Resume page */
+article[data-page="resume"].active ~ .sidebar[data-sidebar="resume"] {
+  display: block;
+}
+
 

@@ -127,21 +127,20 @@ const pages = document.querySelectorAll("[data-page]");
 
 // Function to control sidebar visibility based on active page
 function updateSidebarVisibility() {
-  const aboutSidebar = document.querySelector("[about-sidebar]");
-  const resumeSidebar = document.querySelector("[resume-sidebar]");
+  const aboutSidebar = document.querySelector('[data-sidebar="about"]');
+  const resumeSidebar = document.querySelector('[data-sidebar="resume"]');
   const activePage = document.querySelector(".active[data-page]");
   
   if (activePage && aboutSidebar && resumeSidebar) {
     const pageType = activePage.dataset.page;
     
     if (pageType === "about") {
-      aboutSidebar.style.display = "block"; // Show About sidebar
-      resumeSidebar.style.display = "none"; // Hide Resume sidebar
+      aboutSidebar.style.display = "block";
+      resumeSidebar.style.display = "none";
     } else if (pageType === "resume") {
-      aboutSidebar.style.display = "none"; // Hide About sidebar
-      resumeSidebar.style.display = "block"; // Show Resume sidebar
+      aboutSidebar.style.display = "none";
+      resumeSidebar.style.display = "block";
     } else {
-      // Hide both sidebars for other pages (portfolio, etc.)
       aboutSidebar.style.display = "none";
       resumeSidebar.style.display = "none";
     }
@@ -236,5 +235,5 @@ document.addEventListener("DOMContentLoaded", function() {
   const savedTheme = localStorage.getItem("theme") || "dark";
   document.documentElement.setAttribute("data-theme", savedTheme);
   
-  console.log("Page initialized with theme:", savedTheme); // Debug log
+  console.log("Page initialized with theme:", savedTheme);
 });
