@@ -56,7 +56,7 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/Avatar.jpg" alt="Abdul Malik" width="80" border-radius="100%" >
+          <img src="./assets/images/Avatar.jpg" alt="Abdul Malik" width="80">
         </figure>
 
         <div class="info-content">
@@ -213,10 +213,6 @@
 
     </aside>
 
-
-
-
-
     <!--
       - #main-content
     -->
@@ -242,16 +238,9 @@
           <!--
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
           </li>-->
         </ul>
       </nav>
-
-
-
-
 
       <!--
         - #ABOUT
@@ -280,7 +269,6 @@
             Always eager to collaborate, learn, and push the boundaries of finance and tech. Let's connect and innovate together!
           </p>
         </section>
-
 
         <!--
           - service
@@ -623,35 +611,31 @@
         --> 
         <section class="languages timeline">
           <ul class="content-card">
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="language-outline"></ion-icon> <!-- You can change the icon as needed -->
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="language-outline"></ion-icon>
+              </div>
+              <h3 class="h3">Languages</h3>
             </div>
-            <h3 class="h3">Languages</h3>
-          </div>
           
-          <ol class="timeline-list">
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">English</h4>
-              <span>C2 – Business Proficiency</span>
-            </li>
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Hindi</h4>
-              <span>Native/Bilingual Speaker</span>
-            </li>
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Deutsch</h4>
-              <span>A1, pursuing level A2</span>
-            </li>
-          </ol>
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">English</h4>
+                <span>C2 – Business Proficiency</span>
+              </li>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Hindi</h4>
+                <span>Native/Bilingual Speaker</span>
+              </li>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Deutsch</h4>
+                <span>A1, pursuing level A2</span>
+              </li>
+            </ol>
           </ul>
         </section>
 
       </article>
-
-
-
-
 
       <!--
         - #PORTFOLIO
@@ -660,7 +644,7 @@
       <article class="portfolio" data-page="portfolio">
 
         <header>
-          <h2 class="h2 article-title">Portfolio - Under Construction!</h2>
+          <h2 class="h2 article-title">Portfolio - Under Construction</h2>
         </header>
 
         <section class="projects">
@@ -713,8 +697,8 @@
 
           <ul class="project-list">
 
-            <li class="project-item active" data-filter-item data-category="projects">
-              <a href="#">
+            <li class="project-item active" data-filter-item data-category="projects" data-project-item>
+              <a href="#" data-project-link>
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -727,12 +711,31 @@
                 <h3 class="project-title">Finance</h3>
 
                 <p class="project-category">Projects</p>
+                
+                <!-- Hidden project details that will be displayed in the modal -->
+                <div class="project-details" style="display: none;">
+
+                  <p>A comprehensive financial management application designed to help users track expenses, manage investments, and plan budgets. The dashboard provides a clear overview of financial health with interactive charts and real-time updates.</p>
+                  
+                  <p>The Finance application combines intuitive design with powerful analytical tools, making it suitable for both personal and small business use. Users can set financial goals, track progress, and receive intelligent recommendations based on spending patterns.</p>
+                  
+                  <p>Features:</p>
+                  <ul>
+                    <li>Built with React.js and Node.js for a responsive frontend and robust backend</li>
+                    <li>Integrates with multiple financial APIs including Plaid, Stripe, and Coinbase</li>
+                    <li>Features real-time data visualization using D3.js and Chart.js</li>
+                    <li>Includes budgeting and forecasting tools with machine learning predictions</li>
+                    <li>Secure authentication and data encryption to protect sensitive financial information</li>
+                    <li>Customizable dashboards with drag-and-drop widgets</li>
+                  </ul>
+                  
+                </div>
 
               </a>
             </li>
 
-            <li class="project-item" data-filter-item data-category="learning">
-              <a href="#">
+            <li class="project-item" data-filter-item data-category="learning" data-project-item>
+              <a href="#" data-project-link>
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -745,12 +748,30 @@
                 <h3 class="project-title">Fundo</h3>
 
                 <p class="project-category">Learning</p>
+                
+                <!-- Hidden project details that will be displayed in the modal -->
+                <div class="project-details" style="display: none;">
+                  <p>Fundo is a learning project exploring the fundamentals of web development with a focus on responsive design and user experience. This project was created to deepen understanding of modern frontend development practices and accessibility standards.</p>
+                  
+                  <p>The application features a clean, intuitive interface that adapts seamlessly to various device sizes while maintaining functionality and visual appeal. Special attention was paid to performance optimization and accessibility features to ensure a great experience for all users.</p>
+                  
+                  <p>Features:</p>
+                  <ul>
+                    <li>Implemented with HTML5, CSS3, and vanilla JavaScript for core functionality</li>
+                    <li>Mobile-first responsive design approach using Flexbox and CSS Grid</li>
+                    <li>Accessibility features following WCAG 2.1 AA guidelines, including keyboard navigation and screen reader support</li>
+                    <li>Performance optimizations including image lazy loading, code splitting, and resource prioritization</li>
+                    <li>CSS animations and transitions for enhanced user experience</li>
+                    <li>Comprehensive testing across multiple browsers and devices</li>
+                  </ul>
+                  
+                </div>
 
               </a>
             </li>
 
-            <li class="project-item " data-filter-item data-category="competitions">
-              <a href="#">
+            <li class="project-item " data-filter-item data-category="competitions" data-project-item>
+              <a href="#" data-project-link>
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -763,6 +784,24 @@
                 <h3 class="project-title">Brawlhalla</h3>
 
                 <p class="project-category">Competitions</p>
+                
+                <!-- Hidden project details that will be displayed in the modal -->
+                <div class="project-details" style="display: none;">
+                  <p>Brawlhalla was developed for a game development hackathon, focusing on creating an engaging multiplayer experience. The project was completed over a 48-hour period, demonstrating rapid prototyping and efficient teamwork.</p>
+
+                  <p>The game features fast-paced arena combat with unique character abilities and environmental interactions. Players can choose from multiple game modes including team battles, free-for-all, and capture the flag. The project won first place in the "Most Innovative Gameplay" category.</p>
+                  
+                  <p>Features:</p>
+                  <ul>
+                    <li>Developed with Unity game engine and C# scripting</li>
+                    <li>Implemented multiplayer functionality using Photon Unity Networking (PUN)</li>
+                    <li>Created custom character animations and visual effects using Unity's particle system</li>
+                    <li>Designed balancing system for fair gameplay with real-time adjustments</li>
+                    <li>Implemented procedurally generated arenas for unique match experiences</li>
+                    <li>Created a custom matchmaking system with skill-based player pairing</li>
+                  </ul>
+                  
+                </div>
 
               </a>
             </li>
@@ -773,9 +812,35 @@
 
       </article>
      
+      <!-- Project Modal -->
+      <div class="modal-container" data-modal-container>
+        <div class="overlay" data-overlay></div>
 
+        <div class="project-modal">
+          <button class="modal-close-btn" data-modal-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
 
+          <div class="modal-img-wrapper">
+            <img src="" alt="" data-modal-img>
+          </div>
 
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="modal-title-area">
+                <h3 class="h3 modal-title" data-modal-title></h3>
+                <p class="modal-category" data-modal-category></p>
+              </div>
+              <a href="https://github.com/leo-lightfoot" target="_blank" class="modal-github-btn" data-modal-github-btn>
+                <ion-icon name="logo-github"></ion-icon>
+                <span>View on GitHub</span>
+              </a>
+            </div>
+            
+            <div class="modal-text" data-modal-text></div>
+          </div>
+        </div>
+      </div>
 
       <!--
         - #BLOG
@@ -885,46 +950,9 @@
 
 
 
-      <!--
-        - #CONTACT
-      
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2557.5065971197455!2d8.67814487643946!3d50.132954110173486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd0ecc1ce6c2af%3A0x3e0778828d7e65f9!2sFrankfurt%20School%20of%20Finance%20%26%20Management!5e0!3m2!1sen!2sde!4v1741385755198!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </figure>
-        </section>
-
-        <section class="contact-form">
-          <h3 class="h3 form-title">Contact Form</h3>
-          <form action="https://formspree.io/f/xanewpqd" method="POST">
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-            <button class="form-btn" type="submit">
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-          </form>
-        </section>
-      </article>
--->
     </div>
 
   </main>
-
-
-
-
-
 
   <!--
     - custom js link
@@ -936,7 +964,6 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>
 
 </html>

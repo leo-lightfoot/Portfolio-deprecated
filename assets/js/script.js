@@ -12,26 +12,102 @@ if (sidebarBtn) {
   sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 }
 
-// testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
+// shared modal variables
 const modalContainer = document.querySelector("[data-modal-container]");
 const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
 const overlay = document.querySelector("[data-overlay]");
-
-// modal variable
 const modalImg = document.querySelector("[data-modal-img]");
 const modalTitle = document.querySelector("[data-modal-title]");
 const modalText = document.querySelector("[data-modal-text]");
 
-// modal toggle function
-const testimonialsModalFunc = function () {
+// Modal toggle function
+const toggleModal = function () {
   if (modalContainer) {
+    // Toggle the active class on modal and overlay
     modalContainer.classList.toggle("active");
     if (overlay) overlay.classList.toggle("active");
+    
+    // Disable body scrolling when modal is open
+    const body = document.body;
+    if (modalContainer.classList.contains("active")) {
+      // Store the current scroll position
+      window.modalScrollPosition = window.scrollY;
+      // Prevent background scrolling
+      body.style.overflow = "hidden";
+      body.style.position = "fixed";
+      body.style.width = "100%";
+      body.style.top = `-${window.modalScrollPosition}px`;
+    } else {
+      // Reset scrolling and restore position
+      body.style.overflow = "";
+      body.style.position = "";
+      body.style.width = "";
+      body.style.top = "";
+      // Restore scroll position
+      window.scrollTo(0, window.modalScrollPosition);
+      
+      // Reset modal scroll position when closing
+      setTimeout(() => {
+        if (document.querySelector(".project-modal")) {
+          document.querySelector(".project-modal").scrollTop = 0;
+        }
+      }, 300);
+    }
   }
 }
 
-// add click event to all modal items
+// Add click event to modal close button
+if (modalCloseBtn) {
+  modalCloseBtn.addEventListener("click", toggleModal);
+}
+if (overlay) {
+  overlay.addEventListener("click", toggleModal);
+}
+
+// Project modal functionality
+const projectItems = document.querySelectorAll("[data-project-item]");
+const projectLinks = document.querySelectorAll("[data-project-link]");
+const modalCategory = document.querySelector("[data-modal-category]");
+
+// Add click event to all project items
+for (let i = 0; projectLinks && i < projectLinks.length; i++) {
+  projectLinks[i].addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default link behavior
+    
+    const projectItem = this.closest("[data-project-item]");
+    
+    if (modalImg) {
+      const imgSrc = projectItem.querySelector(".project-img img").src;
+      const imgAlt = projectItem.querySelector(".project-img img").alt;
+      modalImg.src = imgSrc;
+      modalImg.alt = imgAlt;
+    }
+    
+    if (modalTitle) modalTitle.innerHTML = projectItem.querySelector(".project-title").innerHTML;
+    if (modalCategory) modalCategory.innerHTML = projectItem.querySelector(".project-category").innerHTML;
+    
+    if (modalText) {
+      // Get the project details content
+      const projectDetails = projectItem.querySelector(".project-details");
+      if (projectDetails) {
+        // Simply copy the content
+        modalText.innerHTML = projectDetails.innerHTML;
+      }
+    }
+
+    // Reset modal scroll position before opening
+    if (document.querySelector(".project-modal")) {
+      document.querySelector(".project-modal").scrollTop = 0;
+    }
+
+    toggleModal();
+  });
+}
+
+// Testimonials functionality
+const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
+
+// Add click event to all testimonials items
 for (let i = 0; testimonialsItem && i < testimonialsItem.length; i++) {
   testimonialsItem[i].addEventListener("click", function () {
     if (modalImg) modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
@@ -39,16 +115,8 @@ for (let i = 0; testimonialsItem && i < testimonialsItem.length; i++) {
     if (modalTitle) modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
     if (modalText) modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
 
-    testimonialsModalFunc();
+    toggleModal();
   });
-}
-
-// add click event to modal close button
-if (modalCloseBtn) {
-  modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-}
-if (overlay) {
-  overlay.addEventListener("click", testimonialsModalFunc);
 }
 
 // custom select variables
@@ -104,22 +172,6 @@ for (let i = 0; filterBtn && i < filterBtn.length; i++) {
     lastClickedBtn = this;
   });
 }
-
-// const form = document.querySelector("[data-form]");
-// const formInputs = document.querySelectorAll("[data-form-input]");
-// const formBtn = document.querySelector("[data-form-btn]");
-
-// // add event to all form input field
-// for (let i = 0; formInputs && i < formInputs.length; i++) {
-//   formInputs[i].addEventListener("input", function () {
-//     // check form validation
-//     if (form && form.checkValidity()) {
-//       if (formBtn) formBtn.removeAttribute("disabled");
-//     } else {
-//       if (formBtn) formBtn.setAttribute("disabled", "");
-//     }
-//   });
-// }
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
@@ -236,4 +288,41 @@ document.addEventListener("DOMContentLoaded", function() {
   document.documentElement.setAttribute("data-theme", savedTheme);
   
   console.log("Page initialized with theme:", savedTheme);
+  
+  // GitHub buttons functionality
+  // Prevent GitHub button clicks from opening the modal
+  const githubButtons = document.querySelectorAll('.modal-github-btn');
+  
+  githubButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      // Stop the event from bubbling up to parent elements
+      e.stopPropagation();
+    });
+  });
+  
+  // Update GitHub repo link based on project
+  const modalGithubBtn = document.querySelector('.modal-github-btn');
+  const projectLinks = document.querySelectorAll('[data-project-link]');
+  
+  projectLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      const projectItem = this.closest('[data-project-item]');
+      const projectTitle = projectItem.querySelector('.project-title').textContent.toLowerCase();
+      
+      // Set appropriate GitHub repo link based on project title
+      switch(projectTitle) {
+        case 'finance':
+          modalGithubBtn.href = 'https://github.com/leo-lightfoot/finance-app';
+          break;
+        case 'fundo':
+          modalGithubBtn.href = 'https://github.com/leo-lightfoot/fundo';
+          break;
+        case 'brawlhalla':
+          modalGithubBtn.href = 'https://github.com/leo-lightfoot/brawlhalla';
+          break;
+        default:
+          modalGithubBtn.href = 'https://github.com/leo-lightfoot';
+      }
+    });
+  });
 });
