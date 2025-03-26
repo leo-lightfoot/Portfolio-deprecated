@@ -269,23 +269,6 @@ article.active {
   border-radius: 3px;
 }
 
-.has-scrollbar::-webkit-scrollbar {
-  width: 5px; /* for vertical scrollbar */
-  height: 5px; /* for horizontal scrollbar */
-}
-
-.has-scrollbar::-webkit-scrollbar-track {
-  background: var(--onyx);
-  border-radius: 5px;
-}
-
-.has-scrollbar::-webkit-scrollbar-thumb {
-  background: var(--accent-color);
-  border-radius: 5px;
-}
-
-.has-scrollbar::-webkit-scrollbar-button { width: 20px; }
-
 .content-card {
   position: relative;
   background: var(--border-gradient-onyx);
@@ -628,8 +611,8 @@ main {
   position: absolute;
   top: 15px;
   right: 15px;
-  background-color: var(--onyx);
-  color: var(--light-gray);
+  background-color: var(--accent-color);
+  color: var(--white-1);
   font-size: 18px;
   padding: 5px;
   border-radius: 8px;
@@ -640,12 +623,13 @@ main {
 }
 
 .modal-close-btn:hover {
-  background-color: var(--accent-color);
+  background-color: hsl(120, 30%, 60%);
   color: var(--white-2);
 }
 
 .modal-close-btn ion-icon { 
-  font-size: 20px;
+  font-size: 20px; 
+  color: black !important;
 }
 
 .modal-img-wrapper {
@@ -1317,8 +1301,7 @@ ion-icon,
 
 /* Service icons (for PNG/SVG images) */
 .service-icon-box img,
-.modal-avatar-box img,
-.icon-stack img {
+.modal-avatar-box img {
   filter: brightness(0) saturate(100%) invert(82%) sepia(14%) saturate(1071%) hue-rotate(84deg) brightness(92%) contrast(87%);
   opacity: 0.8;
   transition: var(--transition-1);
@@ -1326,8 +1309,7 @@ ion-icon,
 
 /* Light theme adjustments for images */
 [data-theme="light"] .service-icon-box img,
-[data-theme="light"] .modal-avatar-box img,
-[data-theme="light"] .icon-stack img {
+[data-theme="light"] .modal-avatar-box img{
   filter: brightness(0) saturate(100%) invert(45%) sepia(24%) saturate(900%) hue-rotate(84deg) brightness(90%) contrast(87%);
 }
 
@@ -1487,8 +1469,6 @@ ion-icon,
 @media (min-width: 768px) {
   /* Reused styles */
   .sidebar, article { width: 700px; }
-
-  .has-scrollbar::-webkit-scrollbar-button { width: 100px; }
 
   /* Sidebar */
   .contacts-list {
@@ -1839,11 +1819,6 @@ article {
 .portfolio,
 .blog {
   padding-bottom: 20px;
-}
-
-.icon-stack img {
-  width: 32px;
-  height: 32px;
 }
 
 .theme-btn {
