@@ -705,28 +705,35 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                  <img src="./assets/images/Portfolio/ECB.jpg" alt="ECB_Interest_Rates" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Finance</h3>
+                <h3 class="project-title">ECB Interest Rate Predictor</h3>
 
                 <p class="project-category">Projects</p>
                 
                 <!-- Hidden project details that will be displayed in the modal -->
                 <div class="project-details" style="display: none;">
 
-                  <p>A comprehensive financial management application designed to help users track expenses, manage investments, and plan budgets. The dashboard provides a clear overview of financial health with interactive charts and real-time updates.</p>
-                  
-                  <p>The Finance application combines intuitive design with powerful analytical tools, making it suitable for both personal and small business use. Users can set financial goals, track progress, and receive intelligent recommendations based on spending patterns.</p>
+                  <p>A machine learning system that predicts European Central Bank (ECB) interest rate decisions (hike, hold, or cut) using economic and financial indicators. The models account for economic regimes (normal/crisis periods) and tries to address class imbalance challenges.</p>
+       
+                  <p>This application uses a Random Forest Classifier with SMOTE (Synthetic Minority Over-sampling Technique) to address the class imbalance in ECB rate decisions, where 'Hold' decisions are much more common than 'Rate Hike' or 'Rate Cut' decisions. I implemented 5 approaches: </p>
+                    <ul>
+                      <li>Standard - Basic Random Forest without special handling for imbalance</li>
+                      <li>Crisis-Aware - Model trained with awareness of financial crisis periods</li>
+                      <li>Weighted - Class-weighted Random Forest</li>
+                      <li>SMOTE - Random Forest with SMOTE oversampling</li>
+                      <li>Two-Stage - Decision tree first classifies between 'Hold' vs 'Change', then a second model determines 'Hike' vs 'Cut'</li>
+                    </ul>
                   
                   <p>Features:</p>
                   <ul>
-                    <li>Built with React.js and Node.js for a responsive frontend and robust backend</li>
-                    <li>Integrates with multiple financial APIs including Plaid, Stripe, and Coinbase</li>
-                    <li>Features real-time data visualization using D3.js and Chart.js</li>
-                    <li>Includes budgeting and forecasting tools with machine learning predictions</li>
-                    <li>Secure authentication and data encryption to protect sensitive financial information</li>
-                    <li>Customizable dashboards with drag-and-drop widgets</li>
+                    <li>Data collection and preprocessing from multiple sources</li>
+                    <li>Feature engineering to create relevant predictors</li>
+                    <li>Multiple modeling approaches to address class imbalance nad period imbalances</li>
+                    <li>Specialized analysis for crisis periods</li>
+                    <li>Comprehensive model evaluation and visualization</li>
+                    <li>Interactive Streamlit dashboard for predictions</li>
                   </ul>
                   
                 </div>
