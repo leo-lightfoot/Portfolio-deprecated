@@ -68,6 +68,8 @@ if (overlay) {
 const projectItems = document.querySelectorAll("[data-project-item]");
 const projectLinks = document.querySelectorAll("[data-project-link]");
 const modalCategory = document.querySelector("[data-modal-category]");
+const modalGithubBtn = document.querySelector("[data-modal-github-btn]");
+const modalWebsiteBtn = document.querySelector("[data-modal-website-btn]");
 
 // Add click event to all project items
 for (let i = 0; projectLinks && i < projectLinks.length; i++) {
@@ -86,6 +88,25 @@ for (let i = 0; projectLinks && i < projectLinks.length; i++) {
     if (modalTitle) modalTitle.innerHTML = projectItem.querySelector(".project-title").innerHTML;
     if (modalCategory) modalCategory.innerHTML = projectItem.querySelector(".project-category").innerHTML;
     
+    // Set the GitHub button link to the project link
+    if (modalGithubBtn) {
+      const projectLink = this.getAttribute("href");
+      modalGithubBtn.href = projectLink;
+    }
+    
+    // Set the Website button link based on the project
+    if (modalWebsiteBtn) {
+      const projectTitle = projectItem.querySelector(".project-title").textContent;
+      // Check if the project has a website attribute, otherwise hide the button
+      const websiteLink = getWebsiteLinkForProject(projectTitle);
+      if (websiteLink) {
+        modalWebsiteBtn.href = websiteLink;
+        modalWebsiteBtn.style.display = "flex";
+      } else {
+        modalWebsiteBtn.style.display = "none";
+      }
+    }
+    
     if (modalText) {
       // Get the project details content
       const projectDetails = projectItem.querySelector(".project-details");
@@ -102,6 +123,21 @@ for (let i = 0; projectLinks && i < projectLinks.length; i++) {
 
     toggleModal();
   });
+}
+
+// Function to get website links for projects
+function getWebsiteLinkForProject(projectTitle) {
+  // Map project titles to their website URLs
+  const websiteLinks = {
+    "ECB Interest Rate Predictor": "https://ecb-interest-rate-policy.streamlit.app/",
+    "Gamified Financial Learning App": "https://moneywisedemo.netlify.app/",
+    "Impact of Carbon Intensity on Mergers and Acquisitions": "https://github.com/leo-lightfoot/GreenAcquisition/blob/main/Energy_Sector_M_A.pdf",
+    "Joust Website": "https://leo-lightfoot.github.io/joust-website/",
+    "Fundo": "https://leo-lightfoot.github.io/fundo",
+    "Brawlhalla": ""
+  };
+  
+  return websiteLinks[projectTitle] || "";
 }
 
 // Testimonials functionality
@@ -289,40 +325,18 @@ document.addEventListener("DOMContentLoaded", function() {
   
   console.log("Page initialized with theme:", savedTheme);
   
-  // GitHub buttons functionality
-  // Prevent GitHub button clicks from opening the modal
-  const githubButtons = document.querySelectorAll('.modal-github-btn');
+  // Button functionality in modal
+  // Prevent buttons clicks from opening the modal
+  const modalButtons = document.querySelectorAll('.modal-github-btn, .modal-website-btn');
   
-  githubButtons.forEach(button => {
+  modalButtons.forEach(button => {
     button.addEventListener('click', function(e) {
       // Stop the event from bubbling up to parent elements
       e.stopPropagation();
     });
   });
   
-  // Update GitHub repo link based on project
+  // Update links based on project - this is now handled in the main project click handler
   const modalGithubBtn = document.querySelector('.modal-github-btn');
-  const projectLinks = document.querySelectorAll('[data-project-link]');
-  
-  projectLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      const projectItem = this.closest('[data-project-item]');
-      const projectTitle = projectItem.querySelector('.project-title').textContent.toLowerCase();
-      
-      // Set appropriate GitHub repo link based on project title
-      switch(projectTitle) {
-        case 'finance':
-          modalGithubBtn.href = 'https://github.com/leo-lightfoot/finance-app';
-          break;
-        case 'fundo':
-          modalGithubBtn.href = 'https://github.com/leo-lightfoot/fundo';
-          break;
-        case 'brawlhalla':
-          modalGithubBtn.href = 'https://github.com/leo-lightfoot/brawlhalla';
-          break;
-        default:
-          modalGithubBtn.href = 'https://github.com/leo-lightfoot';
-      }
-    });
-  });
+  const modalWebsiteBtn = document.querySelector('.modal-website-btn');
 });

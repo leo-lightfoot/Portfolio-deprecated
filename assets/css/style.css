@@ -2157,3 +2157,80 @@ article[data-page="resume"].active ~ .sidebar[data-sidebar="resume"] {
   }
 
 }
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modal-github-btn,
+.modal-website-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--border-gradient-onyx);
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: var(--accent-color);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  transition: var(--transition-1);
+  position: relative;
+  z-index: 1;
+}
+
+.modal-github-btn::before,
+.modal-website-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--eerie-black-1);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.modal-github-btn:hover,
+.modal-website-btn:hover {
+  background: var(--bg-gradient-sage-2);
+}
+
+.modal-github-btn:hover::before,
+.modal-website-btn:hover::before {
+  background: var(--bg-gradient-sage-1);
+}
+
+.modal-github-btn ion-icon,
+.modal-website-btn ion-icon {
+  font-size: 16px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.modal-title-area {
+  flex-grow: 1;
+}
+
+[data-theme="light"] .modal-github-btn,
+[data-theme="light"] .modal-website-btn {
+  color: var(--accent-color);
+}
+
+[data-theme="light"] .modal-github-btn:hover,
+[data-theme="light"] .modal-website-btn:hover {
+  background: var(--accent-color);
+  color: var(--white-1);
+}
+
+@media (max-width: 768px) {
+  .modal-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

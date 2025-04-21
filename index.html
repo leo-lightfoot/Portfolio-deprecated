@@ -644,7 +644,7 @@
       <article class="portfolio" data-page="portfolio">
 
         <header>
-          <h2 class="h2 article-title">Portfolio - Under Construction</h2>
+          <h2 class="h2 article-title">Portfolio</h2>
         </header>
 
         <section class="projects">
@@ -698,42 +698,186 @@
           <ul class="project-list">
 
             <li class="project-item active" data-filter-item data-category="projects" data-project-item>
-              <a href="#" data-project-link>
+              <a href="https://github.com/leo-lightfoot/ECB-Interest-Rate-Policy" target="_blank" data-project-link>
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/Portfolio/ECB.jpg" alt="ECB_Interest_Rates" loading="lazy">
+                  <img src="./assets/images/Portfolio/ECB.png" alt="ECB_Interest_Rates" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">ECB Interest Rate Predictor</h3>
+
+                <p class="project-category">Finance</p>
+                
+                <!-- Hidden project details that will be displayed in the modal -->
+                <div class="project-details" style="display: none;">
+
+                  <p>A machine learning system that predicts European Central Bank (ECB) interest rate decisions based on economic indicators.</p>
+       
+                  <p>Approaches used:</p>
+                    <ul>
+                      <li>Random Forest Classifier as baseline model</li>
+                      <li>Crisis-aware models for economic regime detection</li>
+                      <li>SMOTE for handling class imbalance</li>
+                      <li>Feature importance analysis for model interpretability</li>
+                      <li>Two-stage classification for improved accuracy</li>
+                    </ul>
+                  
+                  <p>Features:</p>
+                  <ul>
+                    <li>Economic data collection and preprocessing pipeline</li>
+                    <li>Model evaluation with custom performance metrics</li>
+                    <li>Interactive Streamlit dashboard for predictions</li>
+                    <li>Python-based implementation with scikit-learn</li>
+                  </ul>
+                  
+                </div>
+
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="projects" data-project-item>
+              <a href="https://github.com/leo-lightfoot/FinLearningGamified" target="_blank" data-project-link>
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/Portfolio/FinLearning.png" alt="Financial_Learning Game" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Gamified Financial Learning App</h3>
 
                 <p class="project-category">Projects</p>
                 
                 <!-- Hidden project details that will be displayed in the modal -->
                 <div class="project-details" style="display: none;">
 
-                  <p>A machine learning system that predicts European Central Bank (ECB) interest rate decisions (hike, hold, or cut) using economic and financial indicators. The models account for economic regimes (normal/crisis periods) and tries to address class imbalance challenges.</p>
+                  <p>A web application that gamifies financial literacy teaching through a fun and engaging experience. Built as part of Eintrach talents of Tomorrow Hackathon 2024.</p>
        
-                  <p>This application uses a Random Forest Classifier with SMOTE (Synthetic Minority Over-sampling Technique) to address the class imbalance in ECB rate decisions, where 'Hold' decisions are much more common than 'Rate Hike' or 'Rate Cut' decisions. I implemented 5 approaches: </p>
+                  <p>Key elements:</p>
                     <ul>
-                      <li>Standard - Basic Random Forest without special handling for imbalance</li>
-                      <li>Crisis-Aware - Model trained with awareness of financial crisis periods</li>
-                      <li>Weighted - Class-weighted Random Forest</li>
-                      <li>SMOTE - Random Forest with SMOTE oversampling</li>
-                      <li>Two-Stage - Decision tree first classifies between 'Hold' vs 'Change', then a second model determines 'Hike' vs 'Cut'</li>
+                      <li>Interactive application with lot of gamification elements.</li>
+                      <li>Achievement-based learning system</li>
                     </ul>
                   
                   <p>Features:</p>
                   <ul>
-                    <li>Data collection and preprocessing from multiple sources</li>
-                    <li>Feature engineering to create relevant predictors</li>
-                    <li>Multiple modeling approaches to address class imbalance nad period imbalances</li>
-                    <li>Specialized analysis for crisis periods</li>
-                    <li>Comprehensive model evaluation and visualization</li>
-                    <li>Interactive Streamlit dashboard for predictions</li>
+                    <li>React-based frontend with Material UI components</li>
+                    <li>Responsive design for all device types</li>
+                    <li>User authentication and progress tracking</li>
+                    <li>Interactive data visualizations</li>
+                  </ul>
+                  
+                </div>
+
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="projects" data-project-item>
+              <a href="https://github.com/leo-lightfoot/GreenAcquisition" target="_blank" data-project-link>
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/Portfolio/CarbonIntensity.png" alt="Carbon_Intensity" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Impact of Carbon Intensity on Mergers and Acquisitions</h3>
+
+                <p class="project-category">Projects</p>
+                
+                <!-- Hidden project details that will be displayed in the modal -->
+                <div class="project-details" style="display: none;">
+
+                  <p>Research on how environmental factors impact mergers and acquisitions in the energy sector.</p>
+       
+                  <p>Research focus:</p>
+                    <ul>
+                      <li>M&A trends in renewable vs traditional energy</li>
+                      <li>Valuation impact of carbon footprint</li>
+                      <li>ESG considerations in corporate decisions</li>
+                      <li>Strategic acquisition modeling</li>
+                    </ul>
+                  
+                  <p>Features:</p>
+                  <ul>
+                    <li>Statistical analysis of energy sector M&A data</li>
+                    <li>Correlation studies between ESG metrics and deal values</li>
+                    <li>Visual representations of sector transitions</li>
+                    <li>Recommendations for sustainable business growth</li>
+                  </ul>
+                  
+                </div>
+
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="projects" data-project-item>
+              <a href="https://github.com/leo-lightfoot/TwitterFinancialSentiment-BinaryAnalysis" target="_blank" data-project-link>
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/Portfolio/TwitterFinancialSentiment.png" alt="Twitter_Financial_Sentiment" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Twitter Financial Sentiment Analysis</h3>
+
+                <p class="project-category">Projects</p>
+                
+                <!-- Hidden project details that will be displayed in the modal -->
+                <div class="project-details" style="display: none;">
+
+                  <p>A sentiment analysis system for financial tweets that classifies content as bullish or bearish.</p>
+       
+                  <p>Analysis approach:</p>
+                    <ul>
+                      <li>Binary classification of financial content</li>
+                      <li>Classification based on Natural Language Processing of tweets</li>
+                      <li>Model performance comparison</li>
+                    </ul>
+                                    
+                </div>
+
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="projects" data-project-item>
+              <a href="https://github.com/leo-lightfoot/joust-website" target="_blank" data-project-link>
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/Portfolio/Joust.png" alt="Joust" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Joust Website</h3>
+
+                <p class="project-category">Projects</p>
+                
+                <!-- Hidden project details that will be displayed in the modal -->
+                <div class="project-details" style="display: none;">
+
+                  <p>A responsive website for the biggest literary event of Delhi NCR, The Joust. Built using HTML, CSS and JavaScript/p>
+              
+                  
+                  <p>Features:</p>
+                  <ul>
+                    <li>HTML5/CSS3/JavaScript implementation</li>
+                    <li>Mobile-first responsive design</li>
+                    <li>CSS animations for interactive elements</li>
+                    <li>Optimized performance and accessibility</li>
                   </ul>
                   
                 </div>
@@ -742,7 +886,7 @@
             </li>
 
             <li class="project-item" data-filter-item data-category="learning" data-project-item>
-              <a href="#" data-project-link>
+              <a href="https://leo-lightfoot.github.io/fundo" target="_blank" data-project-link>
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -777,8 +921,8 @@
               </a>
             </li>
 
-            <li class="project-item " data-filter-item data-category="competitions" data-project-item>
-              <a href="#" data-project-link>
+            <li class="project-item" data-filter-item data-category="competitions" data-project-item>
+              <a href="https://github.com/leo-lightfoot/brawlhalla-hackathon" target="_blank" data-project-link>
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -838,10 +982,16 @@
                 <h3 class="h3 modal-title" data-modal-title></h3>
                 <p class="modal-category" data-modal-category></p>
               </div>
-              <a href="https://github.com/leo-lightfoot" target="_blank" class="modal-github-btn" data-modal-github-btn>
-                <ion-icon name="logo-github"></ion-icon>
-                <span>View on GitHub</span>
-              </a>
+              <div class="modal-buttons">
+                <a href="#" target="_blank" class="modal-github-btn" data-modal-github-btn>
+                  <ion-icon name="logo-github"></ion-icon>
+                  <span>GitHub</span>
+                </a>
+                <a href="#" target="_blank" class="modal-website-btn" data-modal-website-btn>
+                  <ion-icon name="globe-outline"></ion-icon>
+                  <span>Website</span>
+                </a>
+              </div>
             </div>
             
             <div class="modal-text" data-modal-text></div>
